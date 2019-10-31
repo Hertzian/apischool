@@ -27,7 +27,13 @@ use Illuminate\Http\Request;
 
         Route::group(['prefix' => 'client'], function(){
             Route::get('logout', 'api\client\authController@logout');
-            Route::get('profile', 'api\client\authController@profile');
+            Route::get('profile', 'api\client\UsersController@index');
+            Route::put('profile', 'api\client\UsersController@update');
+            Route::get('students', 'api\client\StudentsController@index');
+            Route::get('student/{studentId}', 'api\client\StudentsController@show');
+            Route::get('matters/{studentId}', 'api\client\MattersController@index');
+            Route::get('homeworks/{matterId}', 'api\client\HomeworksController@index');
+            Route::get('exams/{matterId}', 'api\client\ExamsController@index');
         });
 
     });

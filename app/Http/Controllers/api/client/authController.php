@@ -54,12 +54,16 @@ class authController extends Controller
     public function signup(Request $request){
         $request->validate([
             'name' => 'required|string',
+            'surname' => 'required|string',
+            'lastsurname' => 'required|string',
             'email' => 'required|string|email|unique:users',
             'password' => 'required|string|confirmed',
         ]);
 
         $user = new User([
             'name' => $request->name,
+            'surname' => $request->surname,
+            'lastsurname' => $request->lastsurname,
             'email' => $request->email,
             'role' => $request->role,
             'password' => bcrypt($request->password)
@@ -80,7 +84,7 @@ class authController extends Controller
         ]);
     }
 
-    public function profile(Request $request){
-        return response()->json($request->user());
-    }
+    // public function profile(Request $request){
+    //     return response()->json($request->user());
+    // }
 }
