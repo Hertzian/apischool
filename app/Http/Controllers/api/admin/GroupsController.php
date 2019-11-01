@@ -10,7 +10,7 @@ use App\Http\Resources\admin\GroupsResource;
 class GroupsController extends Controller
 {
     public function index(){
-        $groups = Group::all();
+        $groups = Group::paginate(5);
 
         return new GroupsResource($groups);
     }

@@ -10,7 +10,7 @@ use App\Http\Resources\admin\HomeworksResource;
 class HomeworksController extends Controller
 {
     public function index(){
-        $homeworks = Homework::all();
+        $homeworks = Homework::paginate(5);
 
         return new HomeworksResource($homeworks);
     }

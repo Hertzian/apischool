@@ -10,7 +10,8 @@ use App\Http\Resources\admin\StudentsResource;
 class StudentsController extends Controller
 {
     public function index(){
-        $students = Student::all();
+        // $students = Student::all();
+        $students = Student::paginate(5);
 
         return new StudentsResource($students);
     }

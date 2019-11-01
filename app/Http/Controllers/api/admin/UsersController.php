@@ -10,7 +10,7 @@ use App\Http\Resources\admin\UsersResource;
 class UsersController extends Controller
 {
     public function index(){
-        $users = User::where('role', '0')->get();
+        $users = User::where('role', '0')->paginate(5);
 
         return new UsersResource($users);
     }

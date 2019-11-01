@@ -10,7 +10,7 @@ use App\Http\Resources\admin\ExamsResource;
 class ExamsController extends Controller
 {
     public function index(){
-        $exams = Exam::all();
+        $exams = Exam::paginate(5);
 
         return new ExamsResource($exams);
     }

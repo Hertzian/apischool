@@ -10,7 +10,7 @@ use App\Http\Resources\admin\MattersResource;
 class MattersController extends Controller
 {
     public function index(){
-        $matters = Matter::all();
+        $matters = Matter::paginate(5);
 
         return new MattersResource($matters);
     }
