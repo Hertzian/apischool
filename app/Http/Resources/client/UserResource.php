@@ -21,7 +21,7 @@ class UserResource extends JsonResource
             'surname' => $this->surname,
             'lastsurname' => $this->lastsurname,
             'email' => $this->email,
-            'access_token' => auth()->user()->token()
+            'access_token' => $this->access_token
         ];
     }
 }

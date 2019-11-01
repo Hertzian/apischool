@@ -20,7 +20,7 @@ class UsersController extends Controller
 
         $request->validate([
             'email' => 'unique:users,email,' . $user->id,
-            'password' => 'nullable|min:8'
+            'password' => 'nullable|string|min:8'
         ]);
 
         $user->email = $request->input('email');

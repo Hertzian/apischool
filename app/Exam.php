@@ -9,7 +9,8 @@ class Exam extends Model
     protected $table = 'exams';
     protected $fillable = [
         'title',
-        'description'
+        'description',
+        'matter_id'
     ];
 
     public function matter(){

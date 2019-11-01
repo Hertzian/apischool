@@ -27,6 +27,15 @@ class Users extends Seeder
         $user2->email = 'user2@user2.com';
         $user2->password = bcrypt('12345678');
         $user2->save();
+        
+        $admin = new User();
+        $admin->name = 'admin';
+        $admin->surname = 'admin';
+        $admin->lastsurname = 'admin';
+        $admin->email = 'admin@admin.com';
+        $admin->role = '1';
+        $admin->password = bcrypt('12345678');
+        $admin->save();
 
         // factory(User::class, 5)->create();
     }

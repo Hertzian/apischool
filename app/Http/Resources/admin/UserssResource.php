@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Resources\client;
+namespace App\Http\Resources\admin;
 
-use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class GroupsResource extends JsonResource
+class UserssResource extends ResourceCollection
 {
     /**
-     * Transform the resource into an array.
+     * Transform the resource collection into an array.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return array

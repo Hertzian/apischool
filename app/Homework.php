@@ -10,7 +10,8 @@ class Homework extends Model
 
     protected $fillable = [
         'title',
-        'description'
+        'description',
+        'matter_id'
     ];
 
     public function matter(){

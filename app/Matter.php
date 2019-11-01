@@ -9,7 +9,9 @@ class Matter extends Model
     protected $table = 'matters';
 
     protected $fillable = [
-        'name'
+        'title',
+        'description',
+        'group_id'
     ];
 
     public function exam(){
